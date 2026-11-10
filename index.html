@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three Business Hub</title>
+<style>
+:root{font-family:system-ui,Arial,sans-serif;background:#0b1424;color:#edf3ff;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0}header{padding:22px 5%;border-bottom:1px solid #283a53;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+h1{margin:0;font-size:26px}small,.muted{color:#a9bbd1}main{max-width:1200px;margin:auto;padding:25px}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+button,input,select,textarea{font:inherit}button{background:#213d64;border:1px solid #42658b;color:white;border-radius:9px;padding:11px 15px;cursor:pointer}
+button:hover{filter:brightness(1.15)}button:disabled{opacity:.55;cursor:not-allowed}button.active{background:#2772bf}
+section{background:#142239;border:1px solid #304561;border-radius:14px;padding:20px;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{border:1px solid #3a5677;border-radius:10px;padding:17px;background:#1b304c}.card strong{font-size:20px}
+label{display:block;margin:10px 0 5px;color:#b9cbe2}input,select,textarea{width:100%;padding:10px;background:#0c192c;color:white;border:1px solid #46617f;border-radius:8px}
+textarea{min-height:75px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid #334a67;text-align:left;vertical-align:top}th{color:#a9c7e8}
+.scroll{overflow:auto}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.warning{color:#ffd28d}.notice{padding:12px;border-radius:9px;background:#1b304c;border:1px solid #3a5677;margin:12px 0;white-space:pre-wrap}
+.auth{max-width:480px;margin:50px auto}.auth button{margin-top:14px}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+footer{padding:20px;color:#9db2cb;text-align:center}.hidden{display:none!important}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header><div><h1>Three Business Hub</h1><small>One dashboard · Three separate business workspaces</small></div><div class="top-actions"><span id="userLabel" class="muted"></span><button id="signOut" class="hidden" type="button">Sign out</button></div></header>
+<main>
+<div id="notice" class="notice hidden" role="status"></div>
+<section id="loginPanel" class="auth">
+<h2>Sign in to your Business Hub</h2>
+<p class="muted">Use the email address and password for the user you created in Supabase Authentication.</p>
+<form id="loginForm">
+<label>Email address</label><input id="email" type="email" autocomplete="username" required>
+<label>Password</label><input id="password" type="password" autocomplete="current-password" required>
+<button type="submit">Sign in</button>
+</form>
+<p class="muted">Your password is sent directly to Supabase for sign-in. This page does not save it.</p>
+</section>
+<div id="dashboard" class="hidden">
+<p class="muted">Cloud-connected workspace. Records are stored in your Supabase project and protected by its row-level security policies.</p>
+<nav id="nav"></nav><div id="app"></div>
+</div>
+</main>
+<footer>Pipeline Pilot AI UK · Coat Match UK · Kiely Industrial Coatings</footer>
+<script>
+const SUPABASE_URL='https://ttwyefikrudwckjturmf.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_gzd6Ia6FlSmAnSEPXOIrTA_rRpI08Db';
+const B=[{id:'pilot',slug:'pipeline-pilot',name:'Pipeline Pilot AI UK',desc:'Lead generation, outreach and client services'},{id:'match',slug:'coat-match',name:'Coat Match UK',desc:'Coating enquiry matching and referral management'},{id:'kic',slug:'kic',name:'Kiely Industrial Coatings',desc:'Industrial protective coating project coordination'}];
+const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+let currentUser=null, businesses=[], records=[], activeTab='all';
+const el=id=>document.getElementById(id);
+function message(text,error=false){const n=el('notice');n.textContent=text;n.classList.remove('hidden');n.style.borderColor=error?'#a94a4a':'#3a5677';}
+function clearMessage(){el('notice').classList.add('hidden');}
+function businessName(id){return B.find(x=>x.id===id)?.name||'Unknown business';}
+function setSignedIn(user){currentUser=user;el('loginPanel').classList.toggle('hidden',!!user);el('dashboard').classList.toggle('hidden',!user);el('signOut').classList.toggle('hidden',!user);el('userLabel').textContent=user?user.email:'';}
+async function loadData(){
+ clearMessage();
+ const {data:bData,error:bErr}=await client.from('businesses').select('id,slug,name').order('name');
+ if(bErr)throw new Error('Could not load businesses: '+bErr.message);
+ businesses=bData||[];
+ const {data:lData,error:lErr}=await client.from('leads').select('id,business_id,title,source,status,estimated_value,next_follow_up,notes,created_at').eq('owner_id',currentUser.id).order('created_at',{ascending:false});
+ if(lErr)throw new Error('Could not load pipeline records: '+lErr.message);
+ records=(lData||[]).map(x=>({id:x.id,business:businesses.find(b=>b.id===x.business_id)?.slug||'',name:x.title,type:x.source||'Prospect',status:x.status||'New',due:x.next_follow_up||'',value:x.estimated_value||'',notes:x.notes||''}));
+ render();
+}
+function render(){
+ el('nav').innerHTML=[{id:'all',name:'Overview'},...B].map(b=>'<button type="button" class="'+(activeTab===b.id?'active':'')+'" data-tab="'+b.id+'">'+escapeHtml(b.name)+'</button>').join('');
+ el('nav').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{activeTab=btn.dataset.tab;render()}));
+ const visible=records.filter(r=>activeTab==='all'||r.business===activeTab);
+ const cards=B.filter(b=>activeTab==='all'||b.id===activeTab).map(b=>{const a=records.filter(x=>x.business===b.id);return '<div class="card"><strong>'+escapeHtml(b.name)+'</strong><p class="muted">'+escapeHtml(b.desc)+'</p><p>'+a.length+' records · '+a.filter(x=>x.status==='Won').length+' won</p></div>'}).join('');
+ el('app').innerHTML='<section><h2>'+(activeTab==='all'?'All businesses':escapeHtml(businessName(activeTab)))+'</h2><div class="cards">'+cards+'</div></section>'+
+ '<section><h2>Add lead / relationship</h2><form id="recordForm"><div class="grid">'+
+ '<div><label>Business</label><select name="business">'+B.map(b=>'<option value="'+b.id+'" '+(activeTab===b.id?'selected':'')+'>'+escapeHtml(b.name)+'</option>').join('')+'</select></div>'+
+ '<div><label>Company / contact</label><input name="name" required maxlength="150"></div>'+
+ '<div><label>Type</label><select name="type"><option>Prospect</option><option>Referral partner</option><option>Subcontractor</option><option>Customer enquiry</option><option>Client</option></select></div>'+
+ '<div><label>Status</label><select name="status"><option>New</option><option>Contacted</option><option>Warm relationship</option><option>Qualified</option><option>Quoted</option><option>Won</option><option>Lost</option></select></div>'+
+ '<div><label>Next follow-up date</label><input type="date" name="due"></div><div><label>Potential value (£)</label><input type="number" min="0" step="0.01" name="value"></div></div>'+
+ '<label>Notes</label><textarea name="notes" maxlength="3000"></textarea><div class="actions"><button type="submit">Save record to cloud</button></div></form></section>'+
+ '<section><h2>Pipeline ('+visible.length+')</h2><div class="scroll"><table><thead><tr><th>Business</th><th>Company</th><th>Type</th><th>Status</th><th>Follow-up</th><th>Value</th><th>Notes</th><th></th></tr></thead><tbody>'+
+ (visible.length?visible.map(x=>'<tr><td>'+escapeHtml(businessName(x.business))+'</td><td>'+escapeHtml(x.name)+'</td><td>'+escapeHtml(x.type)+'</td><td><select aria-label="Update status" data-status="'+x.id+'">'+['New','Contacted','Warm relationship','Qualified','Quoted','Won','Lost'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td><td>'+escapeHtml(x.due)+'</td><td>'+(x.value?'£'+Number(x.value).toLocaleString('en-GB'):'')+'</td><td>'+escapeHtml(x.notes)+'</td><td><button type="button" data-remove="'+x.id+'">Remove</button></td></tr>').join(''):'<tr><td colspan="8">No records yet.</td></tr>')+
+ '</tbody></table></div><div class="actions"><button type="button" id="exportJson">Export JSON backup</button><button type="button" id="exportCsv">Export CSV</button><button type="button" id="refresh">Refresh from cloud</button></div><label>Import JSON backup</label><input type="file" id="importFile" accept="application/json,.json"></section>';
+ el('recordForm').addEventListener('submit',addRecord);
+ el('app').querySelectorAll('[data-status]').forEach(x=>x.addEventListener('change',()=>updateStatus(x.dataset.status,x.value)));
+ el('app').querySelectorAll('[data-remove]').forEach(x=>x.addEventListener('click',()=>removeRecord(x.dataset.remove)));
+ el('exportJson').addEventListener('click',exportJson);el('exportCsv').addEventListener('click',exportCsv);el('refresh').addEventListener('click',()=>loadData().catch(e=>message(e.message,true)));
+ el('importFile').addEventListener('change',importJson);
+}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+async function addRecord(e){
+ e.preventDefault();const f=new FormData(e.target),slug=f.get('business'),biz=businesses.find(b=>b.slug===slug);
+ if(!biz){message('That business workspace was not found in Supabase.',true);return;}
+ const row={owner_id:currentUser.id,business_id:biz.id,title:String(f.get('name')).trim(),source:f.get('type'),status:f.get('status'),estimated_value:Number(f.get('value')||0),next_follow_up:f.get('due')||null,notes:f.get('notes')||null};
+ const {error}=await client.from('leads').insert(row);
+ if(error){message('Could not save record: '+error.message,true);return;}
+ e.target.reset();await loadData();message('Record saved securely to Supabase.');
+}
+async function updateStatus(id,status){const {error}=await client.from('leads').update({status}).eq('id',id).eq('owner_id',currentUser.id);if(error){message('Status update failed: '+error.message,true);return;}await loadData();message('Status updated.');}
+async function removeRecord(id){if(!confirm('Remove this record from the cloud?'))return;const {error}=await client.from('leads').delete().eq('id',id).eq('owner_id',currentUser.id);if(error){message('Could not remove record: '+error.message,true);return;}await loadData();message('Record removed.');}
+function download(name,data,type){const a=document.createElement('a'),u=URL.createObjectURL(new Blob([data],{type}));a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+function exportJson(){download('three-business-hub-backup.json',JSON.stringify({records},null,2),'application/json');}
+function exportCsv(){const cols=['business','name','type','status','due','value','notes'];const rows=[cols.join(','),...records.map(r=>cols.map(k=>'"'+String(r[k]??'').replaceAll('"','""')+'"').join(','))];download('three-business-hub-pipeline.csv',rows.join('\r\n'),'text/csv');}
+async function importJson(e){const file=e.target.files[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!Array.isArray(d.records))throw Error('Backup does not contain a records list.');if(!confirm('Import these records into Supabase? Existing records will be kept.'))return;
+ for(const r of d.records){const biz=businesses.find(b=>b.slug===r.business);if(!biz||!r.name)continue;const {error}=await client.from('leads').insert({owner_id:currentUser.id,business_id:biz.id,title:String(r.name).slice(0,150),source:r.type||'Prospect',status:r.status||'New',estimated_value:Number(r.value||0),next_follow_up:r.due||null,notes:r.notes||null});if(error)throw error;}
+ await loadData();message('Backup records imported. Existing records were kept.');}catch(err){message('Import failed: '+err.message,true);}finally{e.target.value='';}}
+el('loginForm').addEventListener('submit',async e=>{e.preventDefault();clearMessage();const {data,error}=await client.auth.signInWithPassword({email:el('email').value.trim(),password:el('password').value});el('password').value='';if(error){message('Sign-in failed: '+error.message,true);return;}setSignedIn(data.user);try{await loadData();}catch(err){message(err.message,true);}});
+el('signOut').addEventListener('click',async()=>{await client.auth.signOut();records=[];setSignedIn(null);message('You have signed out.');});
+client.auth.onAuthStateChange((_event,session)=>{if(session?.user){setSignedIn(session.user);loadData().catch(e=>message(e.message,true));}else setSignedIn(null);});
+(async()=>{const {data:{session}}=await client.auth.getSession();if(session?.user){setSignedIn(session.user);try{await loadData();}catch(e){message(e.message,true);}}})();
+</script>
+</body></html>
