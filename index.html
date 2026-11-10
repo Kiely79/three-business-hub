@@ -1,109 +1,53 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Three Business Hub</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three Business Hub</title>
 <style>
-:root{font-family:system-ui,Arial,sans-serif;background:#0b1424;color:#edf3ff;color-scheme:dark}
-*{box-sizing:border-box}body{margin:0}header{padding:22px 5%;border-bottom:1px solid #283a53;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-h1{margin:0;font-size:26px}small,.muted{color:#a9bbd1}main{max-width:1200px;margin:auto;padding:25px}
-nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-button,input,select,textarea{font:inherit}button{background:#213d64;border:1px solid #42658b;color:white;border-radius:9px;padding:11px 15px;cursor:pointer}
-button:hover{filter:brightness(1.15)}button:disabled{opacity:.55;cursor:not-allowed}button.active{background:#2772bf}
-section{background:#142239;border:1px solid #304561;border-radius:14px;padding:20px;margin-bottom:18px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{border:1px solid #3a5677;border-radius:10px;padding:17px;background:#1b304c}.card strong{font-size:20px}
-label{display:block;margin:10px 0 5px;color:#b9cbe2}input,select,textarea{width:100%;padding:10px;background:#0c192c;color:white;border:1px solid #46617f;border-radius:8px}
-textarea{min-height:75px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid #334a67;text-align:left;vertical-align:top}th{color:#a9c7e8}
-.scroll{overflow:auto}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.warning{color:#ffd28d}.notice{padding:12px;border-radius:9px;background:#1b304c;border:1px solid #3a5677;margin:12px 0;white-space:pre-wrap}
-.auth{max-width:480px;margin:50px auto}.auth button{margin-top:14px}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-footer{padding:20px;color:#9db2cb;text-align:center}.hidden{display:none!important}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
-<body>
-<header><div><h1>Three Business Hub</h1><small>One dashboard · Three separate business workspaces</small></div><div class="top-actions"><span id="userLabel" class="muted"></span><button id="signOut" class="hidden" type="button">Sign out</button></div></header>
-<main>
-<div id="notice" class="notice hidden" role="status"></div>
-<section id="loginPanel" class="auth">
-<h2>Sign in to your Business Hub</h2>
-<p class="muted">Use the email address and password for the user you created in Supabase Authentication.</p>
-<form id="loginForm">
-<label>Email address</label><input id="email" type="email" autocomplete="username" required>
-<label>Password</label><input id="password" type="password" autocomplete="current-password" required>
-<button type="submit">Sign in</button>
-</form>
-<p class="muted">Your password is sent directly to Supabase for sign-in. This page does not save it.</p>
-</section>
-<div id="dashboard" class="hidden">
-<p class="muted">Cloud-connected workspace. Records are stored in your Supabase project and protected by its row-level security policies.</p>
-<nav id="nav"></nav><div id="app"></div>
-</div>
-</main>
+:root{font-family:Inter,system-ui,Arial,sans-serif;background:#0a1424;color:#edf3ff;color-scheme:dark}*{box-sizing:border-box}body{margin:0}header{padding:20px 4%;border-bottom:1px solid #2c405b;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}h1{margin:0;font-size:26px}small,.muted{color:#a9bbd1}main{max-width:1400px;margin:auto;padding:22px}button,input,select,textarea{font:inherit}button{background:#203c61;border:1px solid #42658b;color:#fff;border-radius:9px;padding:10px 14px;cursor:pointer}button:hover{filter:brightness(1.15)}button.active{background:#2772bf}button:disabled{opacity:.55}section{background:#142239;border:1px solid #304561;border-radius:14px;padding:18px;margin:0 0 16px}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px}.card{background:#1b304c;border:1px solid #3a5677;border-radius:11px;padding:16px}.card strong{font-size:18px}label{display:block;margin:9px 0 5px;color:#b9cbe2}input,select,textarea{width:100%;padding:10px;background:#0c192c;color:#fff;border:1px solid #46617f;border-radius:8px}textarea{min-height:72px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px;border-bottom:1px solid #334a67;text-align:left;vertical-align:top;max-width:250px;overflow-wrap:anywhere}th{color:#a9c7e8}.scroll{overflow:auto}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.notice{padding:12px;border-radius:9px;background:#1b304c;border:1px solid #3a5677;margin:12px 0;white-space:pre-wrap}.auth{max-width:460px;margin:45px auto}.hidden{display:none!important}.pill{display:inline-block;border:1px solid #456382;border-radius:20px;padding:3px 9px;color:#c9d9ed;font-size:12px}.danger{background:#592c37;border-color:#8a4857}.muted{font-size:13px}footer{text-align:center;color:#9db2cb;padding:20px}
+</style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
+<body><header><div><h1>Three Business Hub</h1><small>One platform · Three business workspaces</small></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span id="userLabel" class="muted"></span><button id="signOut" class="hidden">Sign out</button></div></header>
+<main><div id="notice" class="notice hidden"></div>
+<section id="loginPanel" class="auth"><h2>Sign in to your Business Hub</h2><p class="muted">Use your Supabase account. Your password is not stored by this page.</p><form id="loginForm"><label>Email address</label><input id="email" type="email" autocomplete="username" required><label>Password</label><input id="password" type="password" autocomplete="current-password" required><button>Sign in</button></form></section>
+<div id="dashboard" class="hidden"><p class="muted">Cloud records are stored in Supabase. Access is governed by your account and database row-level security.</p><div id="businessNav" class="nav"></div><div id="moduleNav" class="nav"></div><div id="app"></div></div></main>
 <footer>Pipeline Pilot AI UK · Coat Match UK · Kiely Industrial Coatings</footer>
 <script>
 const SUPABASE_URL='https://ttwyefikrudwckjturmf.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_gzd6Ia6FlSmAnSEPXOIrTA_rRpI08Db';
-const B=[{id:'pilot',slug:'pipeline-pilot',name:'Pipeline Pilot AI UK',desc:'Lead generation, outreach and client services'},{id:'match',slug:'coat-match',name:'Coat Match UK',desc:'Coating enquiry matching and referral management'},{id:'kic',slug:'kic',name:'Kiely Industrial Coatings',desc:'Industrial protective coating project coordination'}];
 const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-let currentUser=null, businesses=[], records=[], activeTab='all';
-const el=id=>document.getElementById(id);
-function message(text,error=false){const n=el('notice');n.textContent=text;n.classList.remove('hidden');n.style.borderColor=error?'#a94a4a':'#3a5677';}
-function clearMessage(){el('notice').classList.add('hidden');}
-function businessName(id){return B.find(x=>x.id===id)?.name||'Unknown business';}
-function setSignedIn(user){currentUser=user;el('loginPanel').classList.toggle('hidden',!!user);el('dashboard').classList.toggle('hidden',!user);el('signOut').classList.toggle('hidden',!user);el('userLabel').textContent=user?user.email:'';}
-async function loadData(){
- clearMessage();
- const {data:bData,error:bErr}=await client.from('businesses').select('id,slug,name').order('name');
- if(bErr)throw new Error('Could not load businesses: '+bErr.message);
- businesses=bData||[];
- const {data:lData,error:lErr}=await client.from('leads').select('id,business_id,title,source,status,estimated_value,next_follow_up,notes,created_at').eq('owner_id',currentUser.id).order('created_at',{ascending:false});
- if(lErr)throw new Error('Could not load pipeline records: '+lErr.message);
- records=(lData||[]).map(x=>({id:x.id,business:businesses.find(b=>b.id===x.business_id)?.id||'',name:x.title,type:x.source||'Prospect',status:x.status||'New',due:x.next_follow_up||'',value:x.estimated_value||'',notes:x.notes||''}));
- render();
-}
-function render(){
- el('nav').innerHTML=[{id:'all',name:'Overview'},...B].map(b=>'<button type="button" class="'+(activeTab===b.id?'active':'')+'" data-tab="'+b.id+'">'+escapeHtml(b.name)+'</button>').join('');
- el('nav').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{activeTab=btn.dataset.tab;render()}));
- const visible=records.filter(r=>activeTab==='all'||r.business===activeTab);
- const cards=B.filter(b=>activeTab==='all'||b.id===activeTab).map(b=>{const a=records.filter(x=>x.business===b.id);return '<div class="card"><strong>'+escapeHtml(b.name)+'</strong><p class="muted">'+escapeHtml(b.desc)+'</p><p>'+a.length+' records · '+a.filter(x=>x.status==='Won').length+' won</p></div>'}).join('');
- el('app').innerHTML='<section><h2>'+(activeTab==='all'?'All businesses':escapeHtml(businessName(activeTab)))+'</h2><div class="cards">'+cards+'</div></section>'+
- '<section><h2>Add lead / relationship</h2><form id="recordForm"><div class="grid">'+
- '<div><label>Business</label><select name="business">'+B.map(b=>'<option value="'+b.id+'" '+(activeTab===b.id?'selected':'')+'>'+escapeHtml(b.name)+'</option>').join('')+'</select></div>'+
- '<div><label>Company / contact</label><input name="name" required maxlength="150"></div>'+
- '<div><label>Type</label><select name="type"><option>Prospect</option><option>Referral partner</option><option>Subcontractor</option><option>Customer enquiry</option><option>Client</option></select></div>'+
- '<div><label>Status</label><select name="status"><option>New</option><option>Contacted</option><option>Warm relationship</option><option>Qualified</option><option>Quoted</option><option>Won</option><option>Lost</option></select></div>'+
- '<div><label>Next follow-up date</label><input type="date" name="due"></div><div><label>Potential value (£)</label><input type="number" min="0" step="0.01" name="value"></div></div>'+
- '<label>Notes</label><textarea name="notes" maxlength="3000"></textarea><div class="actions"><button type="submit">Save record to cloud</button></div></form></section>'+
- '<section><h2>Pipeline ('+visible.length+')</h2><div class="scroll"><table><thead><tr><th>Business</th><th>Company</th><th>Type</th><th>Status</th><th>Follow-up</th><th>Value</th><th>Notes</th><th></th></tr></thead><tbody>'+
- (visible.length?visible.map(x=>'<tr><td>'+escapeHtml(businessName(x.business))+'</td><td>'+escapeHtml(x.name)+'</td><td>'+escapeHtml(x.type)+'</td><td><select aria-label="Update status" data-status="'+x.id+'">'+['New','Contacted','Warm relationship','Qualified','Quoted','Won','Lost'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td><td>'+escapeHtml(x.due)+'</td><td>'+(x.value?'£'+Number(x.value).toLocaleString('en-GB'):'')+'</td><td>'+escapeHtml(x.notes)+'</td><td><button type="button" data-remove="'+x.id+'">Remove</button></td></tr>').join(''):'<tr><td colspan="8">No records yet.</td></tr>')+
- '</tbody></table></div><div class="actions"><button type="button" id="exportJson">Export JSON backup</button><button type="button" id="exportCsv">Export CSV</button><button type="button" id="refresh">Refresh from cloud</button></div><label>Import JSON backup</label><input type="file" id="importFile" accept="application/json,.json"></section>';
- el('recordForm').addEventListener('submit',addRecord);
- el('app').querySelectorAll('[data-status]').forEach(x=>x.addEventListener('change',()=>updateStatus(x.dataset.status,x.value)));
- el('app').querySelectorAll('[data-remove]').forEach(x=>x.addEventListener('click',()=>removeRecord(x.dataset.remove)));
- el('exportJson').addEventListener('click',exportJson);el('exportCsv').addEventListener('click',exportCsv);el('refresh').addEventListener('click',()=>loadData().catch(e=>message(e.message,true)));
- el('importFile').addEventListener('change',importJson);
-}
-function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-async function addRecord(e){
- e.preventDefault();const f=new FormData(e.target),slug=f.get('business'),biz=businesses.find(b=>b.id===slug);
- if(!biz){message('That business workspace was not found in Supabase.',true);return;}
- const row={owner_id:currentUser.id,business_id:biz.id,title:String(f.get('name')).trim(),source:f.get('type'),status:f.get('status'),estimated_value:Number(f.get('value')||0),next_follow_up:f.get('due')||null,notes:f.get('notes')||null};
- const {error}=await client.from('leads').insert(row);
- if(error){message('Could not save record: '+error.message,true);return;}
- e.target.reset();await loadData();message('Record saved securely to Supabase.');
-}
-async function updateStatus(id,status){const {error}=await client.from('leads').update({status}).eq('id',id).eq('owner_id',currentUser.id);if(error){message('Status update failed: '+error.message,true);return;}await loadData();message('Status updated.');}
-async function removeRecord(id){if(!confirm('Remove this record from the cloud?'))return;const {error}=await client.from('leads').delete().eq('id',id).eq('owner_id',currentUser.id);if(error){message('Could not remove record: '+error.message,true);return;}await loadData();message('Record removed.');}
-function download(name,data,type){const a=document.createElement('a'),u=URL.createObjectURL(new Blob([data],{type}));a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
-function exportJson(){download('three-business-hub-backup.json',JSON.stringify({records},null,2),'application/json');}
-function exportCsv(){const cols=['business','name','type','status','due','value','notes'];const rows=[cols.join(','),...records.map(r=>cols.map(k=>'"'+String(r[k]??'').replaceAll('"','""')+'"').join(','))];download('three-business-hub-pipeline.csv',rows.join('\r\n'),'text/csv');}
-async function importJson(e){const file=e.target.files[0];if(!file)return;try{const d=JSON.parse(await file.text());if(!Array.isArray(d.records))throw Error('Backup does not contain a records list.');if(!confirm('Import these records into Supabase? Existing records will be kept.'))return;
- for(const r of d.records){const biz=businesses.find(b=>b.slug===r.business);if(!biz||!r.name)continue;const {error}=await client.from('leads').insert({owner_id:currentUser.id,business_id:biz.id,title:String(r.name).slice(0,150),source:r.type||'Prospect',status:r.status||'New',estimated_value:Number(r.value||0),next_follow_up:r.due||null,notes:r.notes||null});if(error)throw error;}
- await loadData();message('Backup records imported. Existing records were kept.');}catch(err){message('Import failed: '+err.message,true);}finally{e.target.value='';}}
-el('loginForm').addEventListener('submit',async e=>{e.preventDefault();clearMessage();const {data,error}=await client.auth.signInWithPassword({email:el('email').value.trim(),password:el('password').value});el('password').value='';if(error){message('Sign-in failed: '+error.message,true);return;}setSignedIn(data.user);try{await loadData();}catch(err){message(err.message,true);}});
-el('signOut').addEventListener('click',async()=>{await client.auth.signOut();records=[];setSignedIn(null);message('You have signed out.');});
-client.auth.onAuthStateChange((_event,session)=>{if(session?.user){setSignedIn(session.user);loadData().catch(e=>message(e.message,true));}else setSignedIn(null);});
-(async()=>{const {data:{session}}=await client.auth.getSession();if(session?.user){setSignedIn(session.user);try{await loadData();}catch(e){message(e.message,true);}}})();
-</script>
-</body></html>
+const businessDefaults=[{slug:'pipeline-pilot',name:'Pipeline Pilot AI UK',desc:'Lead generation, outreach and client services'},{slug:'coat-match',name:'Coat Match UK',desc:'Coating enquiries, matching and referrals'},{slug:'kic',name:'Kiely Industrial Coatings',desc:'Industrial protective coatings and projects'}];
+const configs={
+ leads:{title:'Sales pipeline',table:'leads',fields:[['business_id','Business','business'],['title','Company / opportunity','text'],['source','Type / source','text'],['status','Status','status'],['estimated_value','Potential value (£)','number'],['next_follow_up','Next follow-up','date'],['notes','Notes','textarea']],cols:['title','source','status','estimated_value','next_follow_up','notes']},
+ contacts:{title:'CRM contacts',table:'contacts',fields:[['name','Contact name','text'],['company','Company','text'],['email','Email','email'],['phone','Phone','text'],['relationship_status','Relationship status','status'],['notes','Notes','textarea']],cols:['name','company','email','phone','relationship_status','notes']},
+ contractors:{title:'Contractor network',table:'contractors',fields:[['company_name','Company name','text'],['contact_name','Contact name','text'],['email','Email','email'],['phone','Phone','text'],['location','Location','text'],['capabilities','Trades / capabilities','textarea'],['insurance_verified','Insurance verified','boolean'],['approved','Approved contractor','boolean'],['notes','Notes','textarea']],cols:['company_name','contact_name','phone','location','insurance_verified','approved','capabilities']},
+ projects:{title:'Projects & jobs',table:'projects',fields:[['business_id','Business','business'],['project_name','Project name','text'],['status','Status','status'],['contract_value','Contract value (£)','number'],['estimated_cost','Estimated cost (£)','number'],['start_date','Start date','date'],['completion_date','Completion date','date'],['notes','Notes','textarea']],cols:['project_name','status','contract_value','estimated_cost','start_date','completion_date','notes']},
+ quotes:{title:'Quotations',table:'quotes',fields:[['quote_number','Quote number','text'],['project_id','Project ID (optional)','text'],['amount','Quote amount (£)','number'],['status','Status','status'],['valid_until','Valid until','date'],['notes','Notes','textarea']],cols:['quote_number','amount','status','valid_until','project_id','notes']},
+ tasks:{title:'Tasks & follow-ups',table:'tasks',fields:[['business_id','Business','business'],['title','Task','text'],['status','Status','status'],['due_date','Due date','date'],['notes','Notes','textarea']],cols:['title','status','due_date','notes']},
+ activities:{title:'Activity log',table:'activities',fields:[['business_id','Business','business'],['activity_type','Activity type','text'],['details','Details','textarea'],['contact_id','Contact ID (optional)','text'],['lead_id','Lead ID (optional)','text']],cols:['activity_type','details','contact_id','lead_id','created_at']}
+};
+let user=null,businesses=[],cache={},activeBusiness='all',activeModule='overview';
+const $=id=>document.getElementById(id);
+function note(s,bad=false){$('notice').textContent=s;$('notice').classList.remove('hidden');$('notice').style.borderColor=bad?'#a94a4a':'#3a5677'}
+function clearNote(){$('notice').classList.add('hidden')}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function businessName(id){return businesses.find(b=>b.id===id)?.name||'—'}
+function setUser(u){user=u;$('loginPanel').classList.toggle('hidden',!!u);$('dashboard').classList.toggle('hidden',!u);$('signOut').classList.toggle('hidden',!u);$('userLabel').textContent=u?.email||''}
+async function fetchRows(key){const cfg=configs[key];const {data,error}=await client.from(cfg.table).select('*').eq('owner_id',user.id).order('created_at',{ascending:false});if(error)throw Error(cfg.title+': '+error.message);cache[key]=data||[]}
+async function loadAll(){clearNote();const {data,error}=await client.from('businesses').select('id,slug,name').order('name');if(error)throw Error('Businesses: '+error.message);businesses=data||[];for(const k of Object.keys(configs))await fetchRows(k);render()}
+function visibleRows(key){const rows=cache[key]||[];if(activeBusiness==='all'||!['leads','projects','tasks','activities'].includes(key))return rows;return rows.filter(r=>r.business_id===activeBusiness)}
+function fieldHtml(f){const [key,label,type]=f;let input='';if(type==='business')input='<select name="'+key+'">'+businesses.map(b=>'<option value="'+b.id+'" '+(activeBusiness===b.id?'selected':'')+'>'+esc(b.name)+'</option>').join('')+'</select>';else if(type==='status')input='<select name="'+key+'"><option>New</option><option>Contacted</option><option>In progress</option><option>Qualified</option><option>Quoted</option><option>Won</option><option>Lost</option><option>Complete</option><option>On hold</option></select>';else if(type==='boolean')input='<select name="'+key+'"><option value="false">No</option><option value="true">Yes</option></select>';else if(type==='textarea')input='<textarea name="'+key+'" maxlength="5000"></textarea>';else input='<input name="'+key+'" type="'+type+'" '+(type==='number'?'min="0" step="0.01"':'')+'>';return '<div><label>'+esc(label)+'</label>'+input+'</div>'}
+function cell(key,row){let v=row[key];if(key==='business_id')v=businessName(v);if(key==='project_id'||key==='contact_id'||key==='lead_id')v=v?String(v).slice(0,8)+'…':'—';if(typeof v==='boolean')v=v?'Yes':'No';if(key.includes('value')||key==='amount')v=v==null?'':'£'+Number(v).toLocaleString('en-GB');if(key==='created_at'&&v)v=new Date(v).toLocaleDateString('en-GB');return esc(v??'')}
+function render(){renderNav();const app=$('app');if(activeModule==='overview'){const cards=businesses.map(b=>{const leads=(cache.leads||[]).filter(x=>x.business_id===b.id);const projects=(cache.projects||[]).filter(x=>x.business_id===b.id);return '<div class="card"><strong>'+esc(b.name)+'</strong><p class="muted">'+esc(businessDefaults.find(x=>x.slug===b.slug)?.desc||'Business workspace')+'</p><p><b>'+leads.length+'</b> leads · <b>'+projects.length+'</b> projects</p></div>'}).join('');app.innerHTML='<section><h2>Business overview</h2><div class="cards">'+cards+'</div></section><section><h2>Operating hub</h2><div class="cards">'+Object.entries(configs).map(([k,c])=>'<div class="card"><strong>'+esc(c.title)+'</strong><p class="muted">'+(cache[k]||[]).length+' records</p><button data-open="'+k+'">Open</button></div>').join('')+'</div></section><section><h2>Documents</h2><p class="muted">Upload RAMS, insurance, certificates, site photos and project documents to private Supabase storage.</p><input id="docFile" type="file"><label>Business / folder</label><select id="docBusiness">'+businesses.map(b=>'<option value="'+b.slug+'">'+esc(b.name)+'</option>').join('')+'</select><button id="uploadDoc">Upload document</button><div id="docList" class="muted"></div></section>';
+app.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{activeModule=b.dataset.open;render()});$('uploadDoc').onclick=uploadDocument;loadDocuments().catch(e=>note(e.message,true));return}
+const cfg=configs[activeModule],rows=visibleRows(activeModule),fields=cfg.fields;const cols=cfg.cols;
+app.innerHTML='<section><h2>'+esc(cfg.title)+'</h2><p class="muted">Records are saved in your Supabase database and restricted to your signed-in account.</p><form id="entryForm"><div class="grid">'+fields.map(fieldHtml).join('')+'</div><div class="actions"><button type="submit">Save '+esc(cfg.title.toLowerCase())+'</button><button type="button" id="reload">Refresh</button><button type="button" id="csv">Export CSV</button></div></form></section><section><h2>Records ('+rows.length+')</h2><div class="scroll"><table><thead><tr>'+cols.map(k=>'<th>'+esc(k.replaceAll('_',' '))+'</th>').join('')+'<th>Action</th></tr></thead><tbody>'+(rows.length?rows.map(r=>'<tr>'+cols.map(k=>'<td>'+cell(k,r)+'</td>').join('')+'<td><button class="danger" data-del="'+r.id+'">Delete</button></td></tr>').join(''):'<tr><td colspan="'+(cols.length+1)+'">No records yet.</td></tr>')+'</tbody></table></div></section>';
+$('entryForm').onsubmit=saveEntry;$('reload').onclick=()=>fetchRows(activeModule).then(render).catch(e=>note(e.message,true));$('csv').onclick=()=>exportRows(cfg.title,rows,cols);app.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>deleteRow(b.dataset.del))}
+function renderNav(){$('businessNav').innerHTML='<button data-biz="all" class="'+(activeBusiness==='all'?'active':'')+'">All businesses</button>'+businesses.map(b=>'<button data-biz="'+b.id+'" class="'+(activeBusiness===b.id?'active':'')+'">'+esc(b.name)+'</button>').join('');$('businessNav').querySelectorAll('[data-biz]').forEach(b=>b.onclick=()=>{activeBusiness=b.dataset.biz;render()});$('moduleNav').innerHTML=[['overview','Overview'],...Object.entries(configs).map(([k,c])=>[k,c.title])].map(([k,n])=>'<button data-mod="'+k+'" class="'+(activeModule===k?'active':'')+'">'+esc(n)+'</button>').join('');$('moduleNav').querySelectorAll('[data-mod]').forEach(b=>b.onclick=()=>{activeModule=b.dataset.mod;render()})}
+async function saveEntry(e){e.preventDefault();const fd=new FormData(e.target),row={owner_id:user.id};for(const [k,v] of fd.entries()){const f=configs[activeModule].fields.find(x=>x[0]===k);const typ=f?.[2];row[k]=typ==='number'?(v===''?0:Number(v)):typ==='boolean'?v==='true':v===''?null:v}const {error}=await client.from(configs[activeModule].table).insert(row);if(error){note('Save failed: '+error.message,true);return}e.target.reset();await fetchRows(activeModule);render();note('Saved to Supabase: '+configs[activeModule].title)}
+async function deleteRow(id){if(!confirm('Permanently delete this record?'))return;const {error}=await client.from(configs[activeModule].table).delete().eq('id',id).eq('owner_id',user.id);if(error){note('Delete failed: '+error.message,true);return}await fetchRows(activeModule);render();note('Record deleted')}
+function exportRows(name,rows,cols){const data=[cols.join(','),...rows.map(r=>cols.map(k=>'"'+String(r[k]??'').replaceAll('"','""')+'"').join(','))].join('\r\n');const a=document.createElement('a'),u=URL.createObjectURL(new Blob([data],{type:'text/csv'}));a.href=u;a.download=name.toLowerCase().replaceAll(' ','-')+'.csv';a.click();URL.revokeObjectURL(u)}
+async function uploadDocument(){const f=$('docFile').files[0];if(!f){note('Choose a file first.',true);return}if(f.size>20*1024*1024){note('File is over 20 MB. Please choose a smaller file.',true);return}const path=user.id+'/'+$('docBusiness').value+'/'+Date.now()+'-'+f.name.replace(/[^a-zA-Z0-9._-]/g,'_');const {error}=await client.storage.from('business-documents').upload(path,f,{upsert:false});if(error){note('Upload failed: '+error.message,true);return}note('Document uploaded to private storage.');$('docFile').value='';loadDocuments().catch(e=>note(e.message,true))}
+async function loadDocuments(){const root=user.id+'/';const {data,error}=await client.storage.from('business-documents').list(root,{limit:100,sortBy:{column:'created_at',order:'desc'}});if(error){$('docList').textContent='Document list unavailable: '+error.message;return}const items=data||[];$('docList').innerHTML=items.length?'<p>Uploaded folders: '+items.map(x=>esc(x.name)).join(', ')+'</p>':'No documents uploaded yet.'}
+function exportBackup(){const obj={};for(const k of Object.keys(configs))obj[k]=cache[k]||[];const a=document.createElement('a'),u=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}));a.href=u;a.download='three-business-hub-backup.json';a.click();URL.revokeObjectURL(u)}
+$('loginForm').onsubmit=async e=>{e.preventDefault();clearNote();const {data,error}=await client.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});$('password').value='';if(error){note('Sign-in failed: '+error.message,true);return}setUser(data.user);try{await loadAll()}catch(x){note(x.message,true)}};
+$('signOut').onclick=async()=>{await client.auth.signOut();setUser(null)};
+client.auth.onAuthStateChange((_e,s)=>{if(s?.user){setUser(s.user);loadAll().catch(e=>note(e.message,true))}else setUser(null)});
+(async()=>{const {data:{session}}=await client.auth.getSession();if(session?.user){setUser(session.user);try{await loadAll()}catch(e){note(e.message,true)}}})();
+</script></body></html>
