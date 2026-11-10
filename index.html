@@ -59,7 +59,7 @@ async function loadData(){
  businesses=bData||[];
  const {data:lData,error:lErr}=await client.from('leads').select('id,business_id,title,source,status,estimated_value,next_follow_up,notes,created_at').eq('owner_id',currentUser.id).order('created_at',{ascending:false});
  if(lErr)throw new Error('Could not load pipeline records: '+lErr.message);
- records=(lData||[]).map(x=>({id:x.id,business:businesses.find(b=>b.id===x.business_id)?.slug||'',name:x.title,type:x.source||'Prospect',status:x.status||'New',due:x.next_follow_up||'',value:x.estimated_value||'',notes:x.notes||''}));
+ records=(lData||[]).map(x=>({id:x.id,business:businesses.find(b=>b.id===x.business_id)?.id||'',name:x.title,type:x.source||'Prospect',status:x.status||'New',due:x.next_follow_up||'',value:x.estimated_value||'',notes:x.notes||''}));
  render();
 }
 function render(){
@@ -86,7 +86,7 @@ function render(){
 }
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 async function addRecord(e){
- e.preventDefault();const f=new FormData(e.target),slug=f.get('business'),biz=businesses.find(b=>b.slug===slug);
+ e.preventDefault();const f=new FormData(e.target),slug=f.get('business'),biz=businesses.find(b=>b.id===slug);
  if(!biz){message('That business workspace was not found in Supabase.',true);return;}
  const row={owner_id:currentUser.id,business_id:biz.id,title:String(f.get('name')).trim(),source:f.get('type'),status:f.get('status'),estimated_value:Number(f.get('value')||0),next_follow_up:f.get('due')||null,notes:f.get('notes')||null};
  const {error}=await client.from('leads').insert(row);
