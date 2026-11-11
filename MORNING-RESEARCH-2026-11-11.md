@@ -4,7 +4,7 @@
 
 The public-source research watchlist is now published as `research.js` and displayed within the Three Business Hub, under **Research watchlist**, with counts also visible on the Overview. This is a **read-only public research layer**, not a write to the private Supabase CRM. Records do not count as contacted leads, qualified enquiries, verified subcontractors or booked revenue.
 
-- K.I.C.: **69** public research records, including **11** procurement leads that still require official notice/status checks.
+- K.I.C.: **70** public research records, including **11** procurement leads that still require official notice/status checks.
 - CoatMatch UK: **72** public research records, comprising specialist metal-roofing/cladding candidates, roofing firms and potential steel/coatings buyers and suppliers.
 - Pipeline Pilot AI UK: **113** public research records, principally manufacturing/engineering businesses from the Confederation of British Metalforming directory.
 - **Total: 254** records, deduplicated within each business; target of 200 per business **not yet achieved**.
@@ -81,3 +81,36 @@ The Hub code now contains conservative duplicate-starter cleanup for exact match
 ### Confirmed email actions this morning
 
 Gmail confirmed four messages SENT after the owner authorised action by saying “morning”: Circle Waste (K.I.C.), Indurent (K.I.C.), the focused supplier-eligibility clarification to VINCI (CoatMatch), and a K.I.C. subcontract-route enquiry to Nottinghamshire County Council Procurement for SEM6659. This report does not imply delivery or reply. The messages and inbox responses above are reflected in this update.
+
+
+## Critical correction — Chown Commercial opt-out and relationship history
+
+The Gmail history has now been checked rather than relying on the latest message alone. K.I.C. had an established positive relationship with Chown Commercial before 10 November: Stephen Chown replied on 29 October that he would be pleased to recommend K.I.C. if opportunities arose, and confirmed on 30 October that he had passed K.I.C.'s details on. There were six sent messages across 29–30 October and 10 November, including two separate new approaches on 10 November. The second round of approaches on 10 November was unnecessary repeat outreach and should have been prevented by checking the existing correspondence and the owner's earlier instruction.
+
+On 11 November Stephen Chown explicitly wrote: “Please take us off your email list. We don't deal with building products.” This is a permanent global opt-out. No further apology, confirmation or marketing email is to be sent.
+
+Actions taken:
+- Created `DO-NOT-CONTACT.md` as the group-wide suppression register, including Chown Commercial Ltd, chowncommercial.co.uk, info@chowncommercial.co.uk, src@chowncommercial.co.uk and Stephen Chown. Scope is all three businesses and all channels.
+- Added a visible warning to the Hub dashboard and a save-time block that rejects any record containing “Chown” so it cannot be casually re-added through the Hub's normal forms. This is a client-side safeguard, not a substitute for a database-level constraint; imported records or direct database writes still require the suppression register to be checked.
+- No further contact has been sent to Chown after the opt-out. Do not try to repair the mistake by emailing them again.
+- The earlier positive referral relationship and the unnecessary duplicate approaches are recorded in the suppression audit for future review.
+
+## New K.I.C. opportunity — VIVID Housing Peninsular House
+
+Added one high-fit opportunity to the public research watchlist (K.I.C. count now 70; group total 255):
+- VIVID Housing Ltd — External Restoration, Refurbishment and Recoating at Peninsular House, Portsmouth.
+- Official notice 2026/S 000-106211 / OCID ocds-h6vhtk-07b78d; UK4 open competition.
+- Estimated contract value £150,000 excluding VAT (not K.I.C. revenue).
+- Scope includes external façade, cladding systems, architectural metalwork, surface preparation and specialist protective coating systems.
+- Clarification deadline 2 December 2026, 12:00; submission deadline 9 December 2026, 12:00.
+- Buyer portal: https://in-tendhost.co.uk/vivid/
+- Notice record: https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=NOV676403&catID=
+- Strong technical fit, but no bid recommendation until the full specification, site survey, access, surface-preparation, repair, coating system, subcontractor pricing, insurance/competence, working capital and >=25% gross margin are checked. No bid has been submitted.
+
+## Current control state
+
+- Four emails were confirmed SENT this morning as previously listed. No other emails are authorised by this instruction.
+- Chown Commercial is permanently suppressed; the repeat outreach failure is acknowledged and recorded.
+- No tender submission, purchase, appointment or contract commitment has been made.
+- Public research watchlist now contains 70 K.I.C., 72 CoatMatch and 113 Pipeline Pilot entries (255 total). These remain research entries, not 255 qualified leads.
+- The Hub's public research layer is published. The Chown warning and form-level block are committed to the GitHub Pages source. Private Supabase CRM sync and a database-enforced global suppression constraint remain unverified.
