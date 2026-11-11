@@ -187,7 +187,7 @@ These are research/watchlist entries, not 258 verified buyers, qualified opportu
 - The group-wide Chown suppression register is committed.
 - The Hub's normal form save now blocks Chown-related rows and also prevents an existing suppressed row being edited to remove its identifying text.
 - A database-level SQL migration has been added at `supabase/migrations/20261111090000_global_chown_suppression.sql`. It creates a fail-closed trigger on the Hub's business record tables where they exist. **It has not been applied to Supabase**, because the Supabase project connector is not connected in this session. Do not describe database enforcement as live until applied and tested.
-- GitHub Pages deployment for the newest source changes is still subject to a successful workflow run; source commit alone is not proof that the live site has updated.
+- GitHub Pages build-and-deployment workflow run 42991219481 completed successfully at 08:58 UTC. The app's live page has not been separately checked in an authenticated browser session.
 - No email, call, tender bid, supplier appointment, insurance acceptance, purchase or contract commitment was made as part of this additional work.
 
 
