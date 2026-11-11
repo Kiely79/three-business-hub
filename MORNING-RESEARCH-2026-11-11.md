@@ -212,3 +212,17 @@ A new K.I.C. watch item has been added for Harworth Group's Nunnery Farm scheme,
 - If approved and built, the future industrial units could create later demand for cladding, steelwork, floors and protective coatings. Build-out is a future possibility, not booked work.
 - Next action is to check the council decision notice after the meeting, then monitor reserved matters, enabling works and appointed principal contractors. No developer contact or sales email has been sent.
 - Sources: https://www.placemidlands.co.uk/decision-due-on-harworths-off-the-scale-nunnery-farm-il/ and https://harworth-rothwell.co.uk/proposals/
+
+
+### Google Business Profiles — verified email status
+
+**K.I.C.**
+- Google sent a performance report showing one profile view in October 2026.
+- Google also sent an email on 26 October stating further verification is required before K.I.C. can manage the profile and make edits visible to customers.
+- The verification link is account-bound and requires the owner to complete Google's identity/business control check in the signed-in Google account. It has not been completed in this session.
+
+**Pipeline Pilot AI UK**
+- Google emailed on 8 November that the Google Account is active, but the Business Profile itself still needs to be completed before the business can start appearing on Search and Maps.
+- This is not proof that a public listing is live or verified.
+
+**Blocker:** these Google steps require the signed-in account's verification and profile-completion UI. They have not been bypassed or falsely marked complete.
