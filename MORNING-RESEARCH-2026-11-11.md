@@ -102,7 +102,7 @@ Added one high-fit opportunity to the public research watchlist (K.I.C. count no
 - Official notice 2026/S 000-106211 / OCID ocds-h6vhtk-07b78d; UK4 open competition.
 - Estimated contract value £150,000 excluding VAT (not K.I.C. revenue).
 - Scope includes external façade, cladding systems, architectural metalwork, surface preparation and specialist protective coating systems.
-- Clarification deadline 2 December 2026, 12:00; submission deadline 9 December 2026, 12:00.
+- Clarification deadline reported as 2 December 2026, 12:00; tender trackers report submission deadline 9 December 2026, 12:00, but the Sell2Wales mirror shows 10 December 2026. Treat the closing date as unresolved until the official Find a Tender notice / VIVID In-Tend portal confirms it.
 - Buyer portal: https://in-tendhost.co.uk/vivid/
 - Notice record: https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=NOV676403&catID=
 - Strong technical fit, but no bid recommendation until the full specification, site survey, access, surface-preparation, repair, coating system, subcontractor pricing, insurance/competence, working capital and >=25% gross margin are checked. No bid has been submitted.
@@ -114,3 +114,6 @@ Added one high-fit opportunity to the public research watchlist (K.I.C. count no
 - No tender submission, purchase, appointment or contract commitment has been made.
 - Public research watchlist now contains 70 K.I.C., 72 CoatMatch and 113 Pipeline Pilot entries (255 total). These remain research entries, not 255 qualified leads.
 - The Hub's public research layer is published. The Chown warning and form-level block are committed to the GitHub Pages source. Private Supabase CRM sync and a database-enforced global suppression constraint remain unverified.
+
+
+The latest GitHub Pages workflow for the suppression safeguard and VIVID watchlist is still running at the time of this report. The source changes are committed, but the live-site deployment has not yet been verified.
