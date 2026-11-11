@@ -4,7 +4,7 @@
 
 The public-source research watchlist is now published as `research.js` and displayed within the Three Business Hub, under **Research watchlist**, with counts also visible on the Overview. This is a **read-only public research layer**, not a write to the private Supabase CRM. Records do not count as contacted leads, qualified enquiries, verified subcontractors or booked revenue.
 
-- K.I.C.: **72** public research records, including **11** procurement leads that still require official notice/status checks.
+- K.I.C.: **73** public research records, including **11** procurement leads that still require official notice/status checks.
 - CoatMatch UK: **72** public research records, comprising specialist metal-roofing/cladding candidates, roofing firms and potential steel/coatings buyers and suppliers.
 - Pipeline Pilot AI UK: **113** public research records, principally manufacturing/engineering businesses from the Confederation of British Metalforming directory.
 - **Total: 254** records, deduplicated within each business; target of 200 per business **not yet achieved**.
@@ -201,3 +201,14 @@ With the owner's permission, K.I.C. sent one non-binding email to the official N
 - Makes no bid, offer, price, commitment or request for privileged information.
 
 Status: sent; awaiting response. Do not send another follow-up until a reply or a reasonable follow-up date.
+
+
+### Nunnery Farm, Rothwell — future industrial development watch
+
+A new K.I.C. watch item has been added for Harworth Group's Nunnery Farm scheme, application NK/2024/0717:
+- Up to 170,184 m² / around 1.8 million sq ft across up to eight industrial/logistics units.
+- Planning officers recommended approval ahead of the North Northamptonshire Planning Committee meeting scheduled for 11 November 2026 at 18:00.
+- The committee decision is not yet verified. A recommendation is not planning permission, a construction tender or a coating work package.
+- If approved and built, the future industrial units could create later demand for cladding, steelwork, floors and protective coatings. Build-out is a future possibility, not booked work.
+- Next action is to check the council decision notice after the meeting, then monitor reserved matters, enabling works and appointed principal contractors. No developer contact or sales email has been sent.
+- Sources: https://www.placemidlands.co.uk/decision-due-on-harworths-off-the-scale-nunnery-farm-il/ and https://harworth-rothwell.co.uk/proposals/
