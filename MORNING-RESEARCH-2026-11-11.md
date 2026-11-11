@@ -55,3 +55,29 @@ The Hub code now contains conservative duplicate-starter cleanup for exact match
 - No tender was submitted and no contract accepted.
 - Research count remains 69 K.I.C., 72 CoatMatch and 113 Pipeline Pilot public research entries (254 total). The 200-per-business target remains incomplete; entries are not all qualified leads.
 - Hub public research layer is published; private Supabase CRM ingestion is still not verified. GitHub Pages cannot securely write to Supabase without an authorised server-side ingestion mechanism and configured secrets/permissions.
+
+
+## Additional tender checks and inbox findings — 11 November 2026
+
+### K.I.C. tender shortlist updates
+
+- **Aster Group — CP-401 External Decorations:** £31.5m framework/portfolio value reported by trackers; the procurement is via CHIC's All Under One Roof DPS, Lot 20 (Decoration Services). The notice says an expression of interest is live and due 12 November; contact CHIC by 19 November to be considered for onboarding. This is a route into a larger procurement, not K.I.C.'s expected revenue. K.I.C. already emailed CHIC on 10 November; do not send a duplicate. Source: https://www.theconstructionindex.co.uk/tenders/view/42959 and https://tenderline.uk/sectors/painting-and-glazing-work-45440000
+- **Burnley Borough Council — Repairs & Maintenance Framework:** reported deadline 17 November 2026 at 17:00 by one tracker; scope includes cladding/rainscreen, roofing/weatherproofing and internal/external decoration lots. Another notice mirror reports 18 November, so verify the official Find a Tender notice and portal before any submission. K.I.C. should assess only relevant lots and subcontract routes; framework ceiling is not K.I.C. revenue. Sources: https://ukframeworks.co.uk/frameworks/fts-077c90 and https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=SEP662806
+- **Ashfield District Council — Pre-Paint & Painting Programme:** £500,000 estimated value; reported closing date 20 November 2026 at 12:00. The scope is domestic-property pre-painting and painting, so fit for K.I.C. specialist industrial coatings is weak unless the appointed contractor needs specialist metalwork/protective-coating subcontractors. Ashfield Procurement Officer Chris Clarke advised K.I.C. to direct that subcontractor query to the Nottinghamshire County Council contact in the Find a Tender notice; do not email the generic tender-notification address again. Source: https://www.find-tender.service.gov.uk/Notice/100383-2026
+- **Progress Housing Group — Provision of Decoration Works:** reported £6.925m total, closing 23 November 2026; clarification deadline reported 13 November. The scope is residential/communal painting and decoration, so likely only a subcontract route if specialist external steel/coating work is included. Confirm lots, buyer contact and exact portal deadline before acting. Sources: https://rfp.quest/tender/provision-of-decoration-works-078edb and https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=OCT670767
+- **North Yorkshire Council — Cyclical Painting and Pre-Painting Programme:** £3m planning/market-engagement notice, not a live tender; tracker indicates expected tender publication 30 November 2026. Potential future supplier engagement only. Source: https://www.find-tender.service.gov.uk/Notice/086717-2026
+- **Yorwaste — Container Repair & Refurbishment:** the relevant earlier tender is closed; the later notice is procurement/market-engagement context, not an open bid. The published notice names Fairport Containers as supplier. Potential future subcontract/overflow route only; K.I.C. already contacted Yorwaste and should not duplicate that approach. Source: https://www.sell2wales.gov.wales/search/show/search_view.aspx?ID=AUG652736&catID=
+
+### Email responses and suppression
+
+- Circle Waste auto-replied that the sales inbox is not manned and says existing account enquiries may be forwarded to jessica.papworth@circlewaste.co.uk. No existing Circle Waste account has been established for K.I.C.; do not forward as an existing-account enquiry.
+- Ashfield Procurement Officer Chris Clarke replied that subcontractor-interest questions should go to the Nottinghamshire County Council contact in the official notice, not the generic notice mailbox. Use the official notice contact only after checking the notice.
+- Stephen Chown of Chown Commercial Ltd explicitly asked K.I.C. to remove him from the email list. Suppress this contact permanently; no further marketing contact.
+- WT Skip Hire message to info@wtskiphire.co.uk bounced with SMTP 550 not authorised. Do not retry that address without a verified alternative.
+- Bridgend's named procurement contact is away until 12 November and directs urgent queries to the procurement team on 01656 642596.
+- West Northamptonshire Council advised that opportunities over £100,000 are advertised through Contracts Finder / Find a Tender and directed suppliers to its In-Tend portal; ensure CPV codes are selected on the supplier profile: https://intendhost.co.uk/wnc/aspx/Home
+- SEGRO acknowledged receipt of K.I.C.'s supplier enquiry; no substantive decision yet.
+
+### Confirmed email actions this morning
+
+Gmail confirmed three messages SENT after the owner authorised action by saying “morning”: Circle Waste (K.I.C.), Indurent (K.I.C.), and the focused supplier-eligibility clarification to VINCI (CoatMatch). This report does not imply delivery or reply. The messages and inbox responses above are reflected in this update.
