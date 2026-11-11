@@ -80,4 +80,4 @@ The Hub code now contains conservative duplicate-starter cleanup for exact match
 
 ### Confirmed email actions this morning
 
-Gmail confirmed three messages SENT after the owner authorised action by saying “morning”: Circle Waste (K.I.C.), Indurent (K.I.C.), and the focused supplier-eligibility clarification to VINCI (CoatMatch). This report does not imply delivery or reply. The messages and inbox responses above are reflected in this update.
+Gmail confirmed four messages SENT after the owner authorised action by saying “morning”: Circle Waste (K.I.C.), Indurent (K.I.C.), the focused supplier-eligibility clarification to VINCI (CoatMatch), and a K.I.C. subcontract-route enquiry to Nottinghamshire County Council Procurement for SEM6659. This report does not imply delivery or reply. The messages and inbox responses above are reflected in this update.
