@@ -4,7 +4,7 @@
 
 The public-source research watchlist is now published as `research.js` and displayed within the Three Business Hub, under **Research watchlist**, with counts also visible on the Overview. This is a **read-only public research layer**, not a write to the private Supabase CRM. Records do not count as contacted leads, qualified enquiries, verified subcontractors or booked revenue.
 
-- K.I.C.: **70** public research records, including **11** procurement leads that still require official notice/status checks.
+- K.I.C.: **72** public research records, including **11** procurement leads that still require official notice/status checks.
 - CoatMatch UK: **72** public research records, comprising specialist metal-roofing/cladding candidates, roofing firms and potential steel/coatings buyers and suppliers.
 - Pipeline Pilot AI UK: **113** public research records, principally manufacturing/engineering businesses from the Confederation of British Metalforming directory.
 - **Total: 254** records, deduplicated within each business; target of 200 per business **not yet achieved**.
@@ -117,3 +117,75 @@ Added one high-fit opportunity to the public research watchlist (K.I.C. count no
 
 
 The latest GitHub Pages workflow for the suppression safeguard and VIVID watchlist is still running at the time of this report. The source changes are committed, but the live-site deployment has not yet been verified.
+
+
+## Additional verified work completed — 11 November 2026
+
+### K.I.C. — procurement and supplier routes
+
+**Ashfield District Council / Nottinghamshire County Council — SEM6659**
+- The Ashfield Procurement and Projects Officer replied on 11 November to K.I.C.'s enquiry.
+- The officer confirmed that Nottinghamshire County Council manages the procurement on Ashfield's behalf and directed any potential specialist-subcontractor enquiry to the NCC contact shown in the notice.
+- The official notice is UK4 100383-2026 / OCID ocds-h6vhtk-078ec3. It is a three-year domestic pre-paint and painting programme, estimated £500,000 ex VAT; tender deadline 20 November 2026 at 12:00; clarification deadline 10 November 2026 at 17:00.
+- The scope is domestic properties, not a direct industrial coatings fit. Clarifications are closed. Do not bid as prime. A specialist subcontract route is possible but not established; no email to NCC has been sent.
+- Source: https://www.find-tender.service.gov.uk/Notice/100383-2026
+
+**West Northamptonshire Council**
+- K.I.C. received an automated confirmation on 10 November that its company details were registered on the Council's In-Tend e-tendering portal.
+- The Estates team advised that opportunities over £100,000 are advertised through Contracts Finder and Find a Tender; quotations and tenders are managed through WNC In-Tend, and the supplier profile should have relevant CPV codes selected.
+- Registration confirmation is not proof that the supplier profile, CPV selections or alerts are complete. Sign-in/profile review remains outstanding.
+- Portal: https://intendhost.co.uk/wnc/aspx/Home
+
+**Circle Waste**
+- K.I.C.'s email was sent 11 November; the sales inbox returned an automatic response stating it is not manned.
+- It says existing account holders may forward to Jessica Papworth, but K.I.C. is not an existing Circle Waste account. Do not use that account-holder route or resend to the unmanned inbox.
+- No human response or sales opportunity is confirmed.
+
+**New Guard Coatings — supplier relationship**
+- Supplier response from Alison Erskine received 9 November; K.I.C. sent a detailed email-only clarification on 10 November, reiterating no calls/meetings at this stage.
+- Initial information: Rust-Oleum 8300 indicative price £117.35, but pack size/coverage are not yet stated; supplier believes Rust-Oleum 8399 primer and Biosan Aqua Plus are no longer available. Alternatives mentioned include RD Coatings water-based products, Guard EPX 2K, PPG Sigmacover, Jotun Jotamastic and KDR.
+- Roof/cladding system selection depends on substrate condition, season and warranty. Delivery, exact pack sizes, coverage, full system costs, trade-account eligibility and discounts remain outstanding.
+- No trade account opened and no products ordered.
+
+### K.I.C. — insurance decision gate
+
+The revised Insure24 / Nelson Policies at Lloyd's quotation PDF (quote NP/Q/365298, dated 10 November 2026) has been extracted and reviewed. It is a quotation only; no cover is in force and no acceptance/payment has been made.
+
+Material terms and issues:
+- Schedule: £5m Public Liability, £5m Products Liability, £10m Employers Liability; £250 standard PL/Products excess.
+- Endorsements: no manual work by K.I.C. or employees except collection/delivery; physical work must be carried out entirely by bona fide subcontractors. Each subcontractor must have Employers Liability and PL/Products cover at least equal to K.I.C.'s limits, including a payment-to-principals clause, and K.I.C. must obtain and retain evidence.
+- Pressure washing, water spraying, overspray and exterior cleaning property-damage claims carry a £1,500 excess per claim; bodily injury is excluded from that increased excess.
+- Height limit: no cover for work above 10 metres.
+- Hazardous-work exclusions include bridges, docks/harbours/railways, chemical/petrochemical sites, oil/gas refineries/storage and power/nuclear stations, among others; no heat work and no work below ground.
+- The PDF schedule total is £834 (£700 premium + £50 administration + £84 IPT), whereas the broker's email described the revised total as £884. This £50 discrepancy must be reconciled in writing.
+- The statement of fact includes declarations about written H&S policy, safety training plan, RAMS, COSHH and work-at-height risk assessments. These must be checked for truth before any acceptance; incorrect statements could jeopardise cover.
+- The business description includes pressure washing, surface preparation and airless spraying; the schedule also says K.I.C. cannot undertake manual work. Broker must confirm exactly what is insured when all physical work is subcontracted.
+- K.I.C. has already asked the broker for full policy wording and written clarification on 10 November. No acceptance or payment should occur until the broker answers and the owner has reviewed the terms. This is a material risk gate, not a routine admin step.
+
+### CoatMatch — replies and deliverability
+
+**VINCI Construction**
+- Automatic supply-chain reply received 9 November. It says future supplier consideration requires Constructionline registration and SSIP accreditation, and lists division-specific procurement contacts.
+- This is an eligibility requirement, not approval or acceptance. CoatMatch's Constructionline/SSIP status has not been verified; no accreditation claim should be made.
+
+**Email delivery**
+- Prestige Facilities message to HELPDESK@fm.prestigesurrey.com had a temporary delivery delay due to recipient server timeouts; Gmail said it would retry for 47 hours. Delivery is not confirmed.
+- PALS message to info@pals-services.co.uk failed permanently because the domain returned NXDOMAIN. Remove this address from usable-contact lists; do not retry it.
+- These are delivery failures, not buyer replies or qualified leads.
+
+### Research counts and data integrity
+
+The public research file now parses as valid JSON and contains **258** entries:
+- K.I.C.: **72**
+- CoatMatch: **73**
+- Pipeline Pilot AI UK: **113**
+
+These are research/watchlist entries, not 258 verified buyers, qualified opportunities, sent messages or CRM records. No new qualified customer, quote, project, revenue or margin is claimed. The Ashfield, Circle Waste, New Guard, WNC and VINCI records now reflect the verified correspondence and their actual status.
+
+### Technical safeguards and remaining deployment state
+
+- The group-wide Chown suppression register is committed.
+- The Hub's normal form save now blocks Chown-related rows and also prevents an existing suppressed row being edited to remove its identifying text.
+- A database-level SQL migration has been added at `supabase/migrations/20261111090000_global_chown_suppression.sql`. It creates a fail-closed trigger on the Hub's business record tables where they exist. **It has not been applied to Supabase**, because the Supabase project connector is not connected in this session. Do not describe database enforcement as live until applied and tested.
+- GitHub Pages deployment for the newest source changes is still subject to a successful workflow run; source commit alone is not proof that the live site has updated.
+- No email, call, tender bid, supplier appointment, insurance acceptance, purchase or contract commitment was made as part of this additional work.
