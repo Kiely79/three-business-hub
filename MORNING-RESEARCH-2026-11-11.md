@@ -226,3 +226,12 @@ A new K.I.C. watch item has been added for Harworth Group's Nunnery Farm scheme,
 - This is not proof that a public listing is live or verified.
 
 **Blocker:** these Google steps require the signed-in account's verification and profile-completion UI. They have not been bypassed or falsely marked complete.
+
+
+### VIVID Peninsular House — eligibility clarification sent
+
+K.I.C. sent an email to VIVID Procurement on 11 November 2026 (Gmail message ID 1a1c9dd27c81c4a3), referencing official notice 2026/S 000-106211. It asks:
+1. Whether a lead contractor/project coordinator may deliver all physical surveys, access, preparation, repairs and coating through named, suitably qualified and insured bona fide subcontractors, with K.I.C. managing the customer contract and coordination.
+2. Whether the full specification, pricing schedule, selection criteria, insurance requirements and contract terms are available through VIVID In-Tend and whether any additional registration/qualification step is required.
+
+The email accurately describes K.I.C.'s project-coordination model, makes no unsupported accreditation/insurance claims and does not submit a bid. It notes the 2 December 2026 clarification deadline and 9 December 2026 12:00 submission deadline. Awaiting reply; do not decide to bid until the documents, subcontracting permission, insurance position, scope and costs have been reviewed.
