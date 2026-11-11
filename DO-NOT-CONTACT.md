@@ -15,7 +15,8 @@ This register applies across Pipeline Pilot AI UK, CoatMatch UK and Kiely Indust
 
 ## History / audit
 
-- K.I.C. correspondence existed before the opt-out: emails to info@chowncommercial.co.uk on 29 October, 30 October and 10 November 2026, plus replies to Stephen Chown on 29 and 30 October.
+- K.I.C. correspondence existed before the opt-out: six sent messages across 29–30 October and 10 November 2026 (29 Oct 14:40 to info@; 29 Oct 17:42 reply to Stephen; 30 Oct 08:22 reply to Stephen; 30 Oct 10:01 to info@; 10 Nov 10:40 to info@; 10 Nov 17:44 to info@), plus two replies from Stephen on 29 and 30 October.
+- The 29 October reply from Stephen said he would be pleased to recommend K.I.C. if opportunities arose; on 30 October he confirmed he had passed K.I.C.'s details on. This was a positive existing relationship, not a cold prospect. The two new approaches on 10 November were unnecessary repeat outreach and should have been prevented by checking the existing thread and owner's prior instruction.
 - On 11 November 2026, Stephen replied: “Please take us off your email list. We don't deal with building products.”
 - The request was received and must be treated as a permanent opt-out.
 - A further Chown-related contact should never have been sent without checking the prior thread and opt-out status. This is recorded as an internal process failure; no further message is to be sent to Chown to apologise or confirm.
