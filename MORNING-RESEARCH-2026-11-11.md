@@ -189,3 +189,15 @@ These are research/watchlist entries, not 258 verified buyers, qualified opportu
 - A database-level SQL migration has been added at `supabase/migrations/20261111090000_global_chown_suppression.sql`. It creates a fail-closed trigger on the Hub's business record tables where they exist. **It has not been applied to Supabase**, because the Supabase project connector is not connected in this session. Do not describe database enforcement as live until applied and tested.
 - GitHub Pages deployment for the newest source changes is still subject to a successful workflow run; source commit alone is not proof that the live site has updated.
 - No email, call, tender bid, supplier appointment, insurance acceptance, purchase or contract commitment was made as part of this additional work.
+
+
+### Ashfield / Nottinghamshire County Council follow-up — sent
+
+With the owner's permission, K.I.C. sent one non-binding email to the official Nottinghamshire County Council procurement contact on 11 November 2026 (Gmail message ID 1a1c9d3bb81a5ba8). The message:
+- References SEM6659 / Find a Tender notice 100383-2026 and Ashfield's direction to the NCC contact.
+- Explains K.I.C.'s actual role as customer-facing project coordinator appointing independent specialist coating subcontractors; it does not claim to employ a painting crew or self-perform.
+- Acknowledges that the clarification period has closed and explicitly says it is not seeking to change or influence the live competition.
+- Asks only whether there is an appropriate route to register interest for a relevant package with the successful contractor, or whether any contact should wait until after award.
+- Makes no bid, offer, price, commitment or request for privileged information.
+
+Status: sent; awaiting response. Do not send another follow-up until a reply or a reasonable follow-up date.
