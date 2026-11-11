@@ -91,3 +91,19 @@ Stages: Researching → Ready to contact → Contacted → Replied → Qualified
 ## Group reporting
 
 Weekly report: new researched opportunities; verified prospects/contractors; drafts; messages actually sent; replies/bounces/opt-outs; qualified enquiries; quotations; wins/losses; actual revenue/gross profit; deadlines and owner decisions. Keep internal group cross-referrals separate from external customers and revenue.
+
+## Permanent communication rule — EMAIL ONLY
+
+- All prospecting, customer enquiries, supplier approaches, introductions, quotations, proposals, follow-ups, onboarding questions and routine commercial communication must be conducted by email.
+- Do not cold-call, telephone, text, send social-media DMs, or arrange calls/meetings as the normal sales process. If a prospect asks for a call or meeting, explain by email that email is preferred and ask whether the matter can be handled in writing. Escalate to the owner if a call is genuinely essential.
+- Request site details, dimensions, photographs, specifications, locations, quantities, access information, schedules and purchasing requirements by email. A site visit may still be necessary for a physical quotation or safe delivery, but arrange and confirm it by email.
+- Use the correct business email identity for K.I.C., CoatMatch and Pipeline Pilot. Do not cross-send from the wrong brand.
+- Record each outbound email, recipient, subject, date, business, purpose, sent status and thread ID in the correct hub record. Record incoming emails and next action. Draft is not sent; sent is not delivered/read.
+- Incoming email is monitoring-only: do not reply, forward, draft, archive, delete, label or otherwise change an incoming message unless the owner explicitly authorises that specific action.
+- Owner has authorised the assistant to run appropriate email-only business development for all three businesses. The assistant may research, qualify, prepare and send suitable, lawful, personalised first-contact emails and proportionate email follow-ups without seeking approval for each individual message, within these rules. Ask the owner before accepting a contract, submitting a tender or formal supplier declaration, making a price/discount or binding delivery commitment, purchasing anything, agreeing credit/payment terms, disclosing confidential information, or sending a response that commits the business legally or financially. For sensitive, unusual or ambiguous messages, ask first.
+- Never send to a suppressed/opted-out contact, and immediately add any opt-out to the group suppression register. Every marketing email must identify the correct sender and include a valid way to opt out. Apply PECR/UK GDPR checks, especially distinguishing corporate subscribers from sole traders and partnerships; do not assume a public email address means consent is unnecessary.
+- Chown Commercial Ltd, Stephen Chown, info@chowncommercial.co.uk, src@chowncommercial.co.uk and the chowncommercial.co.uk domain are permanently suppressed across all three businesses. Never contact through another identity, mailbox or channel.
+
+## Group reporting
+
+Weekly report: new researched opportunities; verified prospects/contractors; drafts; messages actually sent; replies/bounces/opt-outs; qualified enquiries; quotations; wins/losses; actual revenue/gross profit; deadlines and owner decisions. Keep internal group cross-referrals separate from external customers and revenue.
