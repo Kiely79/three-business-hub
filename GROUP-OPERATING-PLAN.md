@@ -107,3 +107,16 @@ Weekly report: new researched opportunities; verified prospects/contractors; dra
 ## Group reporting
 
 Weekly report: new researched opportunities; verified prospects/contractors; drafts; messages actually sent; replies/bounces/opt-outs; qualified enquiries; quotations; wins/losses; actual revenue/gross profit; deadlines and owner decisions. Keep internal group cross-referrals separate from external customers and revenue.
+
+
+## Shared AI handoff inbox (added 12 November 2026)
+
+The Supabase table `public.agent_messages` is the shared handoff inbox. The Hub UI exposes it as **AI team handoffs**. Each agent must read messages addressed to it, acknowledge by changing status to `Acknowledged`, and close completed work with status `Complete` plus a completion note. Use the existing task record for execution tracking; do not create duplicate tasks for the same work.
+
+Ownership:
+- ChatGPT: Three Business Hub, Supabase/GitHub maintenance, task coordination, group pipeline review and business intelligence.
+- Claude: K.I.C. and CoatMatch email inbox/outreach, supplier registrations and forms, daily brief/wrap-up. Record confirmed sends and replies in the Hub; do not send without John's applicable authorisation.
+- Gemini: research support only. No external outreach. Record source-backed findings and suggested next steps in the Hub.
+- Grok and Perplexity: excluded from active business work and research.
+
+The inbox is a shared database channel, not an automatic background connection between AI products. Each agent must actively check and update it in its own session or scheduled workflow. Do not tell John a task is completed unless the action is confirmed in the source system and recorded here. Owner approval remains required for tender submissions, purchases, contracts, insurance activation and other financial commitments.
